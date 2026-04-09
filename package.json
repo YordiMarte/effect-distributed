@@ -1,0 +1,48 @@
+{
+    "name": "effect-distributed",
+    "version": "0.0.11",
+    "description": "A distributed semaphore library for Effect with pluggable backends",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YordiMarte/effect-distributed.git"
+    },
+    "homepage": "https://github.com/YordiMarte/effect-distributed",
+    "bugs": {
+        "url": "https://github.com/YordiMarte/effect-distributed/issues"
+    },
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "check": "tsc --noEmit",
+        "changeset": "changeset",
+        "version": "changeset version",
+        "release": "bun run build && changeset publish"
+    },
+    "exports": {
+        ".": "./dist/index.js",
+        "./redis": "./dist/redis.js"
+    },
+    "publishConfig": {
+        "exports": {
+            ".": "./dist/index.js",
+            "./redis": "./dist/redis.js"
+        }
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.29.8",
+        "@types/bun": "latest",
+        "effect": "^3.19.13",
+        "ioredis": "^5.4.1"
+    },
+    "peerDependencies": {
+        "typescript": "^5",
+        "effect": "^3.0.0",
+        "ioredis": "^5.0.0"
+    },
+        "peerDependenciesMeta": {
+            "ioredis": {
+            "optional": true
+        }
+    }
+}
